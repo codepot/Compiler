@@ -1,0 +1,161 @@
+Token: SEPARATOR     Lexeme: $$
+	<Rat16F> -> $$ <Opt Function Definitions> $$ <Opt Declaration List> <Statement List> $$ 
+
+Token: KEYWORD       Lexeme: function
+	<Opt Function Definitions> -> <Function Definitions>
+	<Function> -> function <Identifier> [<Opt Parameter List>] <Opt Declaration List> <Body>
+
+Token: IDENTIFIER    Lexeme: convert
+                    
+Token: SEPARATOR     Lexeme: [
+	<Opt Parameter List> -> <Parameter List> | <Empty>
+
+Token: IDENTIFIER    Lexeme: miles
+	<Opt Parameter List> -> <Parameter List>
+
+Token: OPERATOR      Lexeme: :
+	<IDs> -> <Identifier>
+	<Parameter> -> <IDs> : <Qualifier>
+
+Token: KEYWORD       Lexeme: real
+	<Qualifier> -> real
+  
+Token: SEPARATOR     Lexeme: ]
+                          
+Token: SEPARATOR     Lexeme: {
+	<Opt Declaration List> - > <Empty>
+	<Statement> -> <Compound>
+
+Token: KEYWORD       Lexeme: return
+	<Statement> -> <Return>
+
+Token: IDENTIFIER    Lexeme: miles
+	<Return> -> return <Expression>;
+	<Expression> -> <Term> <Expression Prime>
+	<Term> -> <Factor> <Term Prime>
+	<factor> -> Identifier
+
+Token: OPERATOR      Lexeme: *
+	<Term Prime> -> * <Factor> <Term Prime>
+
+Token: REAL          Lexeme: 1.6
+	<Expression> -> <Term> <Expression Prime>
+	<Term> -> <Factor> <Term Prime>
+	<factor> -> <Real>
+
+Token: SEPARATOR     Lexeme: ;
+	<Term Prime> -> <Empty>
+	<Expression Prime> -> <Empty>
+
+Token: SEPARATOR     Lexeme: }
+                          
+Token: SEPARATOR     Lexeme: $$
+                         
+Token: KEYWORD       Lexeme: real
+	<Opt Declaration List> - > <Declaration List>
+	<Declaration> -> <Qualifier> <IDs>
+	<Qualifier> -> real
+
+Token: IDENTIFIER    Lexeme: miles
+                      
+Token: SEPARATOR     Lexeme: ,
+	<IDs> -> <Identifier> , <IDs>
+
+Token: IDENTIFIER    Lexeme: kilometers
+                 
+Token: SEPARATOR     Lexeme: ;
+	<IDs> -> <Identifier>
+   
+Token: KEYWORD       Lexeme: read
+	<Statement> -> <Read>
+	<Read> -> read <IDs>
+
+Token: SEPARATOR     Lexeme: (
+                          
+Token: IDENTIFIER    Lexeme: miles
+                      
+Token: SEPARATOR     Lexeme: )
+	<IDs> -> <Identifier>
+   
+Token: SEPARATOR     Lexeme: ;
+                          
+Token: IDENTIFIER    Lexeme: kilometers
+	<Statement> -> <Assign>
+	<Assign> -> <Identifier> := <Expression> ;
+
+Token: OPERATOR      Lexeme: :=
+                         
+Token: IDENTIFIER    Lexeme: convert
+	<Expression> -> <Term> <Expression Prime>
+	<Term> -> <Factor> <Term Prime>
+	<factor> -> <Identifier>[<IDs>]
+	<IDs> -> <Identifier> | <Identifier>, <IDs>
+
+Token: SEPARATOR     Lexeme: [
+                          
+Token: IDENTIFIER    Lexeme: miles
+                      
+Token: SEPARATOR     Lexeme: ]
+	<IDs> -> <Identifier>
+   
+Token: SEPARATOR     Lexeme: ;
+	<Term Prime> -> <Empty>
+	<Expression Prime> -> <Empty>
+
+Token: KEYWORD       Lexeme: if
+	<Statement> -> <If>
+	<If> -> if (<Condition>) <Statement> <If Prime>
+	<Condition> -> <Expression> <Relop> <Expression>
+	<Relop> ->  = | /= | > | < | => | <=
+
+Token: SEPARATOR     Lexeme: (
+	<Statement> -> <Condition>
+	<Condition> -> <Expression> <Relop> <Expression> 
+
+Token: IDENTIFIER    Lexeme: kilometers
+	<Expression> -> <Term> <Expression Prime>
+	<Term> -> <Factor> <Term Prime>
+	<factor> -> Identifier
+
+Token: OPERATOR      Lexeme: =>
+	<Term Prime> -> <Empty>
+	<Expression Prime> -> <Empty>
+	<Relop> -> =>
+
+Token: REAL          Lexeme: 1600.00
+	<Expression> -> <Term> <Expression Prime>
+	<Term> -> <Factor> <Term Prime>
+	<factor> -> <Real>
+
+Token: SEPARATOR     Lexeme: )
+	<Term Prime> -> <Empty>
+	<Expression Prime> -> <Empty>
+
+Token: SEPARATOR     Lexeme: {
+	<Statement> -> <Compound>
+
+Token: KEYWORD       Lexeme: print
+	<Statement> ->  <Write>
+	<Write> ->  print (<Expression>);
+
+Token: SEPARATOR     Lexeme: (
+                          
+Token: IDENTIFIER    Lexeme: kilometers
+	<Expression> -> <Term> <Expression Prime>
+	<Term> -> <Factor> <Term Prime>
+	<factor> -> Identifier
+
+Token: SEPARATOR     Lexeme: )
+	<Term Prime> -> <Empty>
+	<Expression Prime> -> <Empty>
+
+Token: SEPARATOR     Lexeme: ;
+                          
+Token: SEPARATOR     Lexeme: }
+                          
+Token: KEYWORD       Lexeme: endif
+	<If Prime> -> endif
+ 
+Token: SEPARATOR     Lexeme: $$
+                         
+THE SYNTAX IS CORRECT

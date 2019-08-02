@@ -1,0 +1,13 @@
+$$
+function convert[miles: real]{
+	return miles * 1.6;
+}
+$$
+	real miles, kilometers;	
+	read (miles);	
+	kilometers := convert[miles];
+	if(kilometers => 1600.00){
+		print (kilometers);
+	}
+	endif	
+$$

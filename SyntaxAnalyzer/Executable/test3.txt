@@ -1,0 +1,15 @@
+$$
+function credit [amount:real, balance:real]
+{
+	return (balance+amount);
+}
+function credit [amount:real, balance:real]
+{
+	return 3*(balance+3);
+}
+
+$$
+
+print(a);
+
+$$
