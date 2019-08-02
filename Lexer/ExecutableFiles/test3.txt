@@ -1,0 +1,26 @@
+$$
+function credit [amount:real, balance:real]
+{
+	return balance + real;
+}
+
+$$
+
+function debit [amount:real, balance:real]
+{
+	return balance - real;
+}
+$$
+	real _15, balance, 23.26_15,debit, credit, _, _xyz,;
+	read(balance, debit, credit);	
+	balance := credit[balance, credit];	
+	write (balance);	
+	if (balance > 10000.00){
+		credit [balance, balance * 0.025];
+	}
+	else{
+		debit [balance, balance * 0.025];
+	}
+	write (balance);
+	
+$$$

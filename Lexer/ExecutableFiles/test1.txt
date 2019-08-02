@@ -1,0 +1,11 @@
+$$
+	integer year_of_birth, currentYear, age;	
+	
+	read(year_of_birth);
+	read(currentYear);
+
+	age := currentYear - year_of_birth;
+	if(age => 21){
+		write(age);
+	}	
+$$

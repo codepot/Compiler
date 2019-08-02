@@ -1,0 +1,16 @@
+$$
+function convert [fahr:integer]
+{
+	return 5*(fahr-32)/9;
+}
+
+$$
+	integer low, high, step;
+
+	read(low, high, step);
+	while (low < high)
+	  { print (low);
+	    print (convert [low]);
+	    low := low + step;
+	  }
+$$
