@@ -1,0 +1,22 @@
+$$
+
+$$
+	boolean isBig;
+	integer i, max, sum;
+	i := 1;
+	isBig:=false;
+	read (max);
+	while (i != max){
+		sum := sum +i;
+		i := i+1;
+	}
+	
+	if(sum>5000){
+		isBig:=true;
+		sum:=5000;
+	}
+	endif
+
+	print(sum +max);
+
+$$

@@ -1,0 +1,15 @@
+$$
+
+$$
+	integer start, step;	
+		
+	start :=    0;
+	read(step);
+	while (start != 100)
+	{  
+		start := start * step;
+		step := step + k;
+		print (start+step);
+		print (start+(step*2));			
+	}
+$$

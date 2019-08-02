@@ -1,0 +1,13 @@
+$$
+
+$$
+	real rate;
+	real miles, kilometers;	
+	read (miles, kilometers);	
+	
+	if(kilometers => 1600.00){
+		rate:=1.6;
+		print (miles - kilometers*rate);		
+	}
+	endif	
+$$
